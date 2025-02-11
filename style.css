@@ -534,3 +534,71 @@ body.light-mode .folder-link {
         margin-top: 10px;
     }
 }
+/* ====== Button Container ====== */
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Adjust spacing between buttons */
+    margin-top: 20px;
+  }
+  
+  .folder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 20px; /* Adds padding around the button */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  .folder:hover {
+    background-color: #f39c12;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+  }
+  
+  /* ====== Icon and Text Spacing ====== */
+  .folder a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* Default color */
+    font-weight: bold;
+    gap: 1rem; /* Increase gap to create more space between the icon and text */
+  }
+  
+  /* ====== Icon Style ====== */
+  .folder a i {
+    font-size: 20px; /* Adjust icon size */
+    margin-right: 10px; /* Space between icon and text */
+  }
+  
+  /* ====== Hover Effects for Text and Icons ====== */
+  .folder a:hover {
+    color: black; /* Change text color on hover */
+    text-decoration: underline;
+  }
+  
+  /* ====== Light Mode Adjustments ====== */
+  body.light-mode .folder {
+    background-color: #f1f1f1; /* Light background in light mode */
+  }
+  
+  body.light-mode .folder a {
+    color: black; /* Default color in light mode */
+  }
+  
+  body.light-mode .folder a:hover {
+    color: #f39c12; /* Adjust color in light mode on hover */
+  }
+  
+  /* ====== Responsive Adjustments ====== */
+  @media (max-width: 768px) {
+    .bottom-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
