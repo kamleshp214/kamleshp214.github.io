@@ -601,4 +601,51 @@ body.light-mode .folder-link {
       align-items: center;
     }
   }
+  /* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Stack the content vertically */
+    justify-content: center;
+    align-items: flex-start; /* Align to the left */
+    height: 100vh;
+    text-align: left;
+    padding-left: 5%; /* Add space from the left */
+    width: 100%; /* Ensure it doesn't overflow */
+  }
+  
+  /* Greeting and Hero Text */
+  .greeting, .hero-text, .tagline {
+    text-align: left; /* Ensure text is left-aligned */
+    margin-bottom: 10px; /* Add margin to space out elements */
+  }
+  
+  .hero-text {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 20px; /* Add top margin to separate from the greeting */
+  }
+  
+  /* Mobile View Fixes */
+  @media (max-width: 768px) {
+    .hero-section {
+      margin-top: 10px; /* Prevent overlap on smaller screens */
+      text-align: center; /* Align text to center for mobile */
+      padding-left: 5%; /* Ensure no text is cut off */
+    }
+  
+    .greeting {
+      font-size: 1.8rem;
+      margin-bottom: 15px; /* Increase bottom margin for separation */
+    }
+  
+    .hero-text {
+      font-size: 2.5rem; /* Adjust size for mobile */
+      line-height: 1.4;
+    }
+  
+    .tagline {
+      font-size: 1rem;
+    }
+  }
   
