@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ====== General Layout ====== */
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d0d0d;
+    color: white;
+}
+
+/* Background Animation */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+/* ====== Light Mode ====== */
+body.light-mode {
+    background: #f4f4f4;
+    color: black;
+}
+
+body.light-mode #particles-js canvas {
+    filter: invert(1);
+}
+
+/* ====== Header ====== */
+header {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Input Box */
+#nameInput {
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+#nameInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Light Mode Fix for Input */
+body.light-mode #nameInput {
+    border: 1px solid black;
+    color: black;
+    background: transparent;
+}
+
+body.light-mode #nameInput::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Time Display */
+.time {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ====== Hero Section ====== */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.greeting {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.hero-text {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.8;
+    max-width: 600px;
+}
+
+/* Highlight Color */
+.highlight {
+    color: #f39c12;
+}
+
+body.light-mode .highlight {
+    color: #ff5733;
+}
+
+/* ====== Sidebar (Right-Aligned Folders) ====== */
+.sidebar {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+/* Folder Styling */
+.folder {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+    width: 150px;
+}
+
+.folder:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Folder Icon */
+.folder img {
+    width: 32px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.folder span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Light Mode Folder Fix */
+body.light-mode .folder {
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+body.light-mode .folder:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* ====== Bottom Section (Socials & Contact) ====== */
+.bottom-section {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 900px;
+}
+
+.socials, .contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-title, .contact-title {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Social & Contact Links */
+.socials a, .contact a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.socials a:hover, .contact a:hover {
+    text-decoration: underline;
+}
+
+/* Light Mode Adjustments */
+body.light-mode .social-title, 
+body.light-mode .contact-title {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode .socials a, 
+body.light-mode .contact a {
+    color: black;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 3rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .sidebar {
+        right: 5%;
+    }
+
+    .folder {
+        width: 120px;
+        font-size: 0.9rem;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the left */
+    height: 100vh;
+    text-align: left; /* Ensure text aligns left */
+    padding-left: 5%; /* Adjust spacing from the left */
+}
+
+.greeting,
+.hero-text,
+.tagline {
+    text-align: left; /* Apply left alignment to all elements */
+}
+.hero-section {
+    position: absolute;
+    top: 50%;
+    left: 5%; /* Moves it to the left side */
+    transform: translateY(-50%); /* Centers vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the left */
+    text-align: left;
+    max-width: 40%; /* Ensures it doesn't stretch too far */
+}
+.folder-link {
+    text-decoration: none;
+    color: white; /* Default text color */
+    font-weight: bold;
+}
+
+.folder-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Light Mode Fix */
+body.light-mode .folder-link {
+    color: black; /* Match text color in light mode */
+}
+.folder {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+    width: fit-content;
+}
+
+.folder i {
+    font-size: 1.2rem; /* Adjust icon size */
+    color: white; /* Icon color */
+}
+
+/* Light Mode Fix */
+body.light-mode .folder i {
+    color: black;
+}
+
+/* Hover Effect */
+.folder-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.folder-link:hover {
+    text-decoration: underline;
+}
+
+body.light-mode .folder-link {
+    color: black;
+}
